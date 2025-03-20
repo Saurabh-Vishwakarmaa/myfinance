@@ -1,16 +1,76 @@
-# myfinance
+# MyFinance - Personal Finance Tracker
 
-A new Flutter project.
+## Overview
+MyFinance is a Flutter app that helps users track their personal finances efficiently. The app allows users to add transactions (incomes and expenses), categorize them, view their financial history, and generate basic summaries over a given time period.
 
-## Getting Started
+## Features
+- **Transaction Management**: Add, edit, and delete transactions.
+- **Category Management**: Create and manage custom categories.
+- **Dashboard Overview**: View total income, expenses, and a spending breakdown by category.
+- **Data Persistence**: Transactions are saved and synced using Appwrite.
+- **Notifications/Reminders**: Get alerts for upcoming or recurring payments.
+- **Authentication**: Secure login and data sync using Appwrite authentication.
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
+Ensure you have the following installed:
+- Flutter SDK
+- Dart
+- Appwrite (self-hosted or cloud version)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Setup Instructions
+1. **Clone the Repository**
+   ```sh
+   git clone https://github.com/your-repo/myfinance.git
+   cd myfinance
+   ```
+2. **Install Dependencies**
+   ```sh
+   flutter pub get
+   ```
+3. **Set Up Appwrite**
+   - Create a new project in Appwrite.
+   - Configure **authentication**, **database**, and **storage**.
+   - Update `config.dart` with your Appwrite project credentials.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. **Run the App**
+   ```sh
+   flutter run
+   ```
+
+## Project Structure
+```
+myfinance/
+│-- lib/
+│   │-- main.dart  # Entry point
+│   │-- config.dart  # Appwrite configuration
+│   │-- screens/
+│   │   │-- dashboard_screen.dart  # Dashboard UI
+│   │   │-- transactions_screen.dart  # Transaction Management
+│   │   │-- categories_screen.dart  # Category Management
+│   │-- models/
+│   │   │-- transaction_model.dart  # Data model for transactions
+│   │   │-- category_model.dart  # Data model for categories
+│   │-- services/
+│   │   │-- appwrite_service.dart  # Appwrite interaction
+│-- pubspec.yaml  # Dependencies
+│-- README.md  # Project instructions
+```
+
+## API & Data Management
+- The app interacts with **Appwrite's Database** to store transactions and categories.
+- **Appwrite Authentication** is used for secure user login.
+
+## Testing
+Run unit and widget tests:
+```sh
+flutter test
+```
+
+## Contributing
+Feel free to fork this repository and submit pull requests with enhancements.
+
+## License
+MIT License. See `LICENSE` for details.
+
